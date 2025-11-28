@@ -1,16 +1,16 @@
 """
-tinycolors v0.5.0:
+tinycolors v0.5.1.1:
 A tiny, useful, and readable color library for fast colors, and a large library.
 Having a very large library of colorization and super readable syntax, tinycolors is
 the color library you were looking for.
 """
 
-import os
-import sys
+from sys import platform
 from typing import Any, Literal, TypedDict
 
-if sys.platform == "win32":
-    os.system('')
+if platform == "win32":
+    from os import system
+    system('')
 
 # ---------------------------------------------------------
 # Node wrapper
@@ -30,8 +30,7 @@ class NodeProxy:
         return f"<colornode {self._cls.__name__} with code {self._cls.value!r}>"
 
     def __str__(self):
-        value = getattr(self._cls, "value", "\033[0m")
-        return f"{value}\033[0m"
+        return getattr(self._cls, "value", "\033[0m")
 
 def stylenode(cls):
     return NodeProxy(cls)
