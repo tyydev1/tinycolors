@@ -11,7 +11,7 @@ except PackageNotFoundError:
         # If you have a local _version.py with __version__ defined
         from ._version import __version__  # type: ignore
     except Exception:
-        __version__ = "0.0.0"
+        __version__ = "0.6.0"
 
 # Attempt to import and re-export public names from likely submodules.
 __all__ = ["__version__"]
@@ -40,3 +40,5 @@ def __getattr__(name: str):
 
 def __dir__():
     return sorted(__all__)
+
+__author__ = "Razka Rizaldi"
