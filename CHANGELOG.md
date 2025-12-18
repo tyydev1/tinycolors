@@ -1,6 +1,6 @@
 # [tinycolors] Changelog
 
-## [Version 0.6.0] - 2025-12-2
+## [Version 0.6.x] - 2025-12-2
 ### Added
 - None
 

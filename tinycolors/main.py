@@ -1,5 +1,5 @@
 """
-tinycolors v0.6.0:
+tinycolors v0.6.1:
 A tiny, useful, and readable color library for fast colors, and a large library.
 Having a very large library of colorization and super readable syntax, tinycolors is
 the color library you were looking for.

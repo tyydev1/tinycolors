@@ -11,12 +11,12 @@ except PackageNotFoundError:
         # If you have a local _version.py with __version__ defined
         from ._version import __version__  # type: ignore
     except Exception:
-        __version__ = "0.6.0"
+        __version__ = "0.6.1"
 
 # Attempt to import and re-export public names from likely submodules.
 __all__ = ["__version__"]
 
-_known_submodules = ("core", "color", "utils", "converters", "names", "cli")
+_known_submodules = ("exists", "main", "stringable", "tprint")
 
 for _sub in _known_submodules:
     try:
