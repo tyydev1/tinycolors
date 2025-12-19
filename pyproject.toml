@@ -4,19 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tinycolors"
-version = "0.6.1"
+version = "0.6.5"
 description = "A tiny, useful, and readable color library for fast colors"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {text = "MIT"}
-authors = [
-    {name = "Razka Rizaldi", email = "razka.rizaldis@gmail.com"}
-]
+license = "MIT"
+authors = [{ name = "Razka Rizaldi", email = "razka.rizaldis@gmail.com" }]
 keywords = ["color", "ansi", "terminal", "console", "colorize", "formatting"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
@@ -32,3 +30,12 @@ classifiers = [
 Homepage = "https://github.com/tyydev1/tinycolors"
 Repository = "https://github.com/tyydev1/tinycolors"
 Issues = "https://github.com/tyydev1/tinycolors/issues"
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.1.1",
+    "furo>=2023.3.27",
+    "pytest>=7.4.4",
+    "sphinx>=5.3.0",
+    "sphinx-autoapi>=2.1.1",
+]

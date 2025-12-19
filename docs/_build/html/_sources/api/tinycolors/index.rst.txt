@@ -1,0 +1,34 @@
+tinycolors
+==========
+
+.. py:module:: tinycolors
+
+.. autoapi-nested-parse::
+
+   tinycolors package public surface.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/tinycolors/main/index
+   /api/tinycolors/tprint/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   tinycolors.__version__
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+

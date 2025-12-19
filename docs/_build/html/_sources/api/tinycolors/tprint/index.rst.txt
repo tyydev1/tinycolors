@@ -1,0 +1,162 @@
+tinycolors.tprint
+=================
+
+.. py:module:: tinycolors.tprint
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   tinycolors.tprint.Supported
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   tinycolors.tprint.indent
+   tinycolors.tprint.is_quote
+   tinycolors.tprint.is_bracket
+   tinycolors.tprint.is_opening_bracket
+   tinycolors.tprint.is_closing_bracket
+   tinycolors.tprint.get_bracket_type
+   tinycolors.tprint.get_bracket_colors
+   tinycolors.tprint.color_bracket
+   tinycolors.tprint.open_quote
+   tinycolors.tprint.close_quote
+   tinycolors.tprint.append_char
+   tinycolors.tprint.color_syntax
+   tinycolors.tprint.color_numbers
+   tinycolors.tprint.handle_escape
+   tinycolors.tprint.start_quote
+   tinycolors.tprint.maybe_close_quote
+   tinycolors.tprint.append_result
+   tinycolors.tprint.find_closed_quotes
+   tinycolors.tprint.prettify_string
+   tinycolors.tprint.escape_internal_quotes
+   tinycolors.tprint.get_container_color_index
+   tinycolors.tprint.prettify_simple
+   tinycolors.tprint.prettify_container
+   tinycolors.tprint.prettify_list
+   tinycolors.tprint.prettify_dict
+   tinycolors.tprint.prettify_tuple
+   tinycolors.tprint.prettify_set
+   tinycolors.tprint.prettify
+   tinycolors.tprint.tprint
+   tinycolors.tprint.demo
+
+
+Module Contents
+---------------
+
+.. py:data:: Supported
+
+   Supported types for prettification. Includes str, list, dict, tuple, set, int, float, bool, and None.
+
+.. py:function:: indent(level: int) -> str
+
+.. py:function:: is_quote(char: str) -> bool
+
+.. py:function:: is_bracket(char: str) -> bool
+
+.. py:function:: is_opening_bracket(char: str) -> bool
+
+.. py:function:: is_closing_bracket(char: str) -> bool
+
+.. py:function:: get_bracket_type(char: str) -> str
+
+.. py:function:: get_bracket_colors()
+
+.. py:function:: color_bracket(char: str, bracket_stack: list[tuple[str, int]]) -> str
+
+.. py:function:: open_quote(char: str) -> tuple[bool, str, str]
+
+.. py:function:: close_quote(substring: str) -> str
+
+.. py:function:: append_char(substring: str, char: str) -> str
+
+.. py:function:: color_syntax(text: str) -> str
+
+.. py:function:: color_numbers(text: str) -> str
+
+.. py:function:: handle_escape(char: str, escaped: bool) -> tuple[str, bool]
+
+.. py:function:: start_quote(char: str) -> tuple[bool, str, str]
+
+.. py:function:: maybe_close_quote(substring: str, char: str, quote_char: str, next_char: str) -> tuple[bool, str, Optional[str]]
+
+.. py:function:: append_result(result_parts: list[str], substring: str, in_quote: bool)
+
+.. py:function:: find_closed_quotes(element: str) -> tuple[set[int], set[int]]
+
+   Identifies the starting and ending indices of balanced, non-escaped quotes
+   in a string, handling escaped internal quotes like '"'.
+
+
+.. py:function:: prettify_string(element: str) -> str
+
+   Highlights syntax, numbers, and quoted strings within a single string.
+   Also handles bracket color matching when outside of quotes.
+
+
+.. py:function:: escape_internal_quotes(s: str) -> str
+
+   Escapes double quotes inside a string so it can be wrapped in double quotes.
+
+
+.. py:function:: get_container_color_index(level: int) -> int
+
+   Calculates the color index based on the nesting level for bracket coloring.
+
+
+.. py:function:: prettify_simple(element: Any) -> str
+
+   Highlights simple types (bool, None, int, float) with their respective colors.
+
+
+.. py:function:: prettify_container(element: Any, open_char: str, close_char: str, level: int, is_key_value: bool = False) -> str
+
+   Generic function to handle lists, tuples, and sets, controlling
+   the bracket type and key/value formatting.
+
+
+.. py:function:: prettify_list(element: list[Any], level: int = 0) -> str
+
+   Recursively converts a list into a color-highlighted, formatted string.
+
+
+.. py:function:: prettify_dict(element: dict[Any, Any], level: int = 0) -> str
+
+   Recursively converts a dict into a color-highlighted, formatted string.
+
+
+.. py:function:: prettify_tuple(element: tuple[Any, Ellipsis], level: int = 0) -> str
+
+   NEW: Recursively converts a tuple into a color-highlighted, formatted string.
+
+
+.. py:function:: prettify_set(element: set[Any], level: int = 0) -> str
+
+   NEW: Recursively converts a set into a color-highlighted, formatted string.
+
+
+.. py:function:: prettify(element: Supported, level: int = 1) -> str
+
+   The main entry point for prettifying an element, dispatching to the
+   appropriate formatting function based on type.
+
+
+.. py:function:: tprint(element: Supported, level: int = 0) -> None
+
+   Prints the prettified element to the console.
+
+
+.. py:function:: demo()
+
+   Demonstrates the features of the prettify module, including the new
+   support for tuples and sets.
+
+

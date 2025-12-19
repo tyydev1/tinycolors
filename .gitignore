@@ -34,3 +34,6 @@ htmlcov/
 # Manually added
 .claude/
 .venv/
+
+.mypy_cache/
+.idea/

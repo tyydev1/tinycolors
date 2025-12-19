@@ -15,7 +15,7 @@ Test Coverage:
 - Edge cases and integration scenarios
 """
 
-import pytest
+import pytest # type: ignore
 from io import StringIO
 from unittest.mock import patch, MagicMock
 from typing import Any

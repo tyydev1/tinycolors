@@ -1,0 +1,623 @@
+tinycolors.main
+===============
+
+.. py:module:: tinycolors.main
+
+.. autoapi-nested-parse::
+
+   tinycolors v0.6.1:
+   A tiny, useful, and readable color library for fast colors, and a large library.
+   Having a very large library of colorization and super readable syntax, tinycolors is
+   the color library you were looking for.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   tinycolors.main.COLOR_NAMES
+   tinycolors.main.STYLE_NAMES
+   tinycolors.main.COLOR_MAP
+   tinycolors.main.STYLE_MAP
+   tinycolors.main.BG_COLOR_MAP
+   tinycolors.main.COMBINED_STYLES
+   tinycolors.main.key
+   tinycolors.main.COMBINED_STYLES_WITH_BG
+   tinycolors.main.COMBINED_STYLES_LITERAL
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   tinycolors.main.ColorNotFoundError
+   tinycolors.main.StyleNotFoundError
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   tinycolors.main.NodeProxy
+   tinycolors.main.clib
+   tinycolors.main.color
+   tinycolors.main.ColorOptions
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   tinycolors.main.stylenode
+
+
+Module Contents
+---------------
+
+.. py:class:: NodeProxy(cls)
+
+   .. py:method:: __getattr__(item)
+
+
+   .. py:method:: __repr__()
+
+
+   .. py:method:: __str__()
+
+
+.. py:function:: stylenode(cls)
+
+.. py:class:: clib
+
+   Basic color library class with ANSI escape codes.
+
+
+   .. py:attribute:: black
+      :value: '\x1b[30m'
+
+
+
+   .. py:attribute:: red
+      :value: '\x1b[31m'
+
+
+
+   .. py:attribute:: green
+      :value: '\x1b[32m'
+
+
+
+   .. py:attribute:: yellow
+      :value: '\x1b[33m'
+
+
+
+   .. py:attribute:: blue
+      :value: '\x1b[34m'
+
+
+
+   .. py:attribute:: magenta
+      :value: '\x1b[35m'
+
+
+
+   .. py:attribute:: cyan
+      :value: '\x1b[36m'
+
+
+
+   .. py:attribute:: white
+      :value: '\x1b[37m'
+
+
+
+   .. py:attribute:: gray
+      :value: '\x1b[90m'
+
+
+
+   .. py:attribute:: default
+      :value: '\x1b[39m'
+
+
+
+   .. py:attribute:: reset
+      :value: '\x1b[0m'
+
+
+
+   .. py:attribute:: palette
+      :value: ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
+
+
+
+.. py:class:: color
+
+   The elegant color class with classic ANSI codes.
+
+
+   .. py:attribute:: reset
+      :value: '\x1b[0m'
+
+
+
+   .. py:attribute:: black
+      :value: '\x1b[30m'
+
+
+
+   .. py:attribute:: red
+      :value: '\x1b[31m'
+
+
+
+   .. py:attribute:: green
+      :value: '\x1b[32m'
+
+
+
+   .. py:attribute:: yellow
+      :value: '\x1b[33m'
+
+
+
+   .. py:attribute:: blue
+      :value: '\x1b[34m'
+
+
+
+   .. py:attribute:: magenta
+      :value: '\x1b[35m'
+
+
+
+   .. py:attribute:: cyan
+      :value: '\x1b[36m'
+
+
+
+   .. py:attribute:: white
+      :value: '\x1b[37m'
+
+
+
+   .. py:attribute:: gray
+      :value: '\x1b[90m'
+
+
+
+   .. py:attribute:: default
+      :value: '\x1b[39m'
+
+
+
+   .. py:class:: bright
+
+      Bright color variants
+
+
+      .. py:attribute:: black
+         :value: '\x1b[90m'
+
+
+
+      .. py:attribute:: red
+         :value: '\x1b[91m'
+
+
+
+      .. py:attribute:: green
+         :value: '\x1b[92m'
+
+
+
+      .. py:attribute:: yellow
+         :value: '\x1b[93m'
+
+
+
+      .. py:attribute:: blue
+         :value: '\x1b[94m'
+
+
+
+      .. py:attribute:: magenta
+         :value: '\x1b[95m'
+
+
+
+      .. py:attribute:: cyan
+         :value: '\x1b[96m'
+
+
+
+      .. py:attribute:: white
+         :value: '\x1b[97m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: bg
+
+      Background colors
+
+
+      .. py:attribute:: black
+         :value: '\x1b[40m'
+
+
+
+      .. py:attribute:: red
+         :value: '\x1b[41m'
+
+
+
+      .. py:attribute:: green
+         :value: '\x1b[42m'
+
+
+
+      .. py:attribute:: yellow
+         :value: '\x1b[43m'
+
+
+
+      .. py:attribute:: blue
+         :value: '\x1b[44m'
+
+
+
+      .. py:attribute:: magenta
+         :value: '\x1b[45m'
+
+
+
+      .. py:attribute:: cyan
+         :value: '\x1b[46m'
+
+
+
+      .. py:attribute:: white
+         :value: '\x1b[47m'
+
+
+
+      .. py:attribute:: gray
+         :value: '\x1b[100m'
+
+
+
+      .. py:attribute:: default
+         :value: '\x1b[49m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+      .. py:class:: bright
+
+         Bright background color variants
+
+
+         .. py:attribute:: black
+            :value: '\x1b[100m'
+
+
+
+         .. py:attribute:: red
+            :value: '\x1b[101m'
+
+
+
+         .. py:attribute:: green
+            :value: '\x1b[102m'
+
+
+
+         .. py:attribute:: yellow
+            :value: '\x1b[103m'
+
+
+
+         .. py:attribute:: blue
+            :value: '\x1b[104m'
+
+
+
+         .. py:attribute:: magenta
+            :value: '\x1b[105m'
+
+
+
+         .. py:attribute:: cyan
+            :value: '\x1b[106m'
+
+
+
+         .. py:attribute:: white
+            :value: '\x1b[107m'
+
+
+
+         .. py:attribute:: reset
+            :value: '\x1b[0m'
+
+
+
+
+
+   .. py:class:: bold
+
+      Bold style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[1m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: dim
+
+      Dim style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[2m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: italic
+
+      Italic style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[3m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: underline
+
+      Underline style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[4m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: blinking
+
+      Blinking style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[5m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: fast_blinking
+
+      Blinking style, but faster
+
+
+      .. py:attribute:: value
+         :value: '\x1b[6m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: inverted
+
+      Inverted background and foreground colors style
+
+
+      .. py:attribute:: value
+         :value: '\x1b[7m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: hidden
+
+      .. py:attribute:: value
+         :value: '\x1b[8m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: striked
+
+      Your text is striked (struck) in the chest!
+
+
+      .. py:attribute:: value
+         :value: '\x1b[9m'
+
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+
+   .. py:class:: style
+
+      Basic style library
+
+
+      .. py:attribute:: reset
+         :value: '\x1b[0m'
+
+
+
+      .. py:attribute:: bold
+         :value: '\x1b[1m'
+
+
+
+      .. py:attribute:: dim
+         :value: '\x1b[2m'
+
+
+
+      .. py:attribute:: italic
+         :value: '\x1b[3m'
+
+
+
+      .. py:attribute:: underline
+         :value: '\x1b[4m'
+
+
+
+      .. py:attribute:: blink
+         :value: '\x1b[5m'
+
+
+
+      .. py:attribute:: fast_blink
+         :value: '\x1b[6m'
+
+
+
+      .. py:attribute:: inverse
+         :value: '\x1b[7m'
+
+
+
+      .. py:attribute:: hidden
+         :value: '\x1b[8m'
+
+
+
+      .. py:attribute:: strike
+         :value: '\x1b[9m'
+
+
+
+
+.. py:data:: COLOR_NAMES
+
+.. py:data:: STYLE_NAMES
+
+.. py:data:: COLOR_MAP
+
+.. py:data:: STYLE_MAP
+
+.. py:data:: BG_COLOR_MAP
+
+.. py:data:: COMBINED_STYLES
+
+.. py:data:: key
+   :value: 'bold black'
+
+
+.. py:data:: COMBINED_STYLES_WITH_BG
+
+.. py:data:: COMBINED_STYLES_LITERAL
+
+.. py:exception:: ColorNotFoundError
+
+   Bases: :py:obj:`Exception`
+
+
+   Call this if the error has something to do with a color
+
+
+.. py:exception:: StyleNotFoundError
+
+   Bases: :py:obj:`Exception`
+
+
+   Call this if the error has something to do with a style
+
+
+.. py:class:: ColorOptions
+
+   Bases: :py:obj:`TypedDict`
+
+
+   dict() -> new empty dictionary
+   dict(mapping) -> new dictionary initialized from a mapping object's
+       (key, value) pairs
+   dict(iterable) -> new dictionary initialized as if via:
+       d = {}
+       for k, v in iterable:
+           d[k] = v
+   dict(**kwargs) -> new dictionary initialized with the name=value pairs
+       in the keyword argument list.  For example:  dict(one=1, two=2)
+
+
+   .. py:attribute:: color
+      :type:  COLOR_NAMES | None
+
+
+   .. py:attribute:: style
+      :type:  STYLE_NAMES | None
+
+
+   .. py:attribute:: bg
+      :type:  COLOR_NAMES | None
+
+

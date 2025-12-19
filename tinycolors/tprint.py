@@ -1,9 +1,10 @@
 import re
-from typing import Optional, Any
-from tinycolors.main import colorize, color, clib
-from tinycolors.stringable import Stringable
-from tinycolors.exists import exists
+from typing import Optional, Any, Union
+from .main import color, clib
+from . import colorize
 
+Supported = Union[str, list[Any], dict[Any, Any], tuple[Any, ...], set[Any], int, float, bool, None]
+"""Supported types for prettification. Includes str, list, dict, tuple, set, int, float, bool, and None."""
 
 def indent(level: int) -> str:
     return '    ' * level
@@ -79,7 +80,7 @@ def append_char(substring: str, char: str) -> str:
 def color_syntax(text: str) -> str:
     def replacer(match: re.Match) -> str:
         word = match.group(0)
-        return f"{color.italic.blue}{word}{clib.reset}"
+        return f"{color.italic.blue}{word}{clib.reset}" # type: ignore
 
     pattern = r"\b(True|False|None)\b"
     return re.sub(pattern, replacer, text)
@@ -116,7 +117,7 @@ def maybe_close_quote(substring: str, char: str, quote_char: str, next_char: str
 
 
 def append_result(result_parts: list[str], substring: str, in_quote: bool):
-    if exists(substring):
+    if substring:
         if in_quote:
             result_parts.append(substring)
         else:
@@ -213,7 +214,7 @@ def prettify_string(element: str) -> str:
 
         elif is_quote(char) and (i in opening_quotes or i in closing_quotes):
             if not in_quote and i in opening_quotes:
-                if exists(plain_text):
+                if (plain_text):
                     result_parts.append(color_syntax(color_numbers(plain_text)))
                     plain_text = ""
                 in_quote, quote_char, substring = start_quote(char)
@@ -235,7 +236,7 @@ def prettify_string(element: str) -> str:
                     plain_text += char
 
         elif is_bracket(char) and not in_quote:
-            if exists(plain_text):
+            if plain_text:
                 result_parts.append(color_syntax(color_numbers(plain_text)))
                 plain_text = ""
 
@@ -260,9 +261,9 @@ def prettify_string(element: str) -> str:
 
         i += 1
 
-    if exists(plain_text):
+    if (plain_text):
         result_parts.append(color_syntax(color_numbers(plain_text)))
-    if exists(substring) and in_quote:
+    if (substring) and in_quote:
         # Final append for an unterminated string (shouldn't happen with find_closed_quotes, but for safety)
         result_parts.append(close_quote(substring).replace('\\"', '"'))
 
@@ -408,7 +409,7 @@ def prettify_set(element: set[Any], level: int = 0) -> str:
     return prettify_container(element, '{', '}', level, is_key_value=False)
 
 
-def prettify(element: Stringable, level: int = 1) -> str:
+def prettify(element: Supported, level: int = 1) -> str:
     """
     The main entry point for prettifying an element, dispatching to the
     appropriate formatting function based on type.
@@ -433,7 +434,7 @@ def prettify(element: Stringable, level: int = 1) -> str:
     return result
 
 
-def tprint(element: Stringable, level: int = 0) -> None:
+def tprint(element: Supported, level: int = 0) -> None:
     """Prints the prettified element to the console."""
     print(prettify(element, level))
 
